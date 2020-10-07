@@ -1,0 +1,21 @@
+﻿@model arsiv.Models.EntityFramework.Turler
+@{
+    ViewBag.Title = "Kaydet";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<h2>Yeni Turler</h2>
+@using (Html.BeginForm("Kaydet", "Turler", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m=>m.Turismi)
+        @Html.TextBoxFor(m=>m.Turismi,new {@class="form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    @Html.HiddenFor(m=>m.ID)
+}
+
+
+
+
+

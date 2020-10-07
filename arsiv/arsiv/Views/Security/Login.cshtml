@@ -1,0 +1,41 @@
+﻿@model arsiv.Models.EntityFramework.Kullanici
+    @{
+        Layout = null;
+    }
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <!--Pulling Awesome Font -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/login.css" rel="stylesheet" />
+
+    <div class="container">
+        <h3>Lütfen Giriş Yapınız...</h3>
+        @ViewBag.Mesaj
+        <div class="row">
+            <div class="col-md-offset-5 col-md-3">
+                @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+                {
+                    <div class="form-login">
+                        <h4>Hoşgeldiniz</h4>
+                        @Html.LabelFor(m => m.Ad)
+                        @Html.TextBoxFor(m => m.Ad, new { @class = "form-control", placeholder = "Kullancı Adı" })
+                    </div>
+                    <div class="form-login">
+                        @Html.LabelFor(m => m.Sifre)
+                        @Html.PasswordFor(m => m.Sifre, new { @class = "form-control", placeholder = "Şifre" })
+                    </div>
+                    <button type="submit" class="btn btn-block btn-success">Giriş Yap</button>
+                }
+
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,30 @@
+﻿@using arsiv.Models.EntityFramework
+@model List<Yazarlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<h2>Yazalar Listesi</h2>
+<a class="btn btn-outline-primary" href="/Yazarlar/Kaydet">Yeni Yazar Kaydı</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Yazar No</th>
+            <th>Yazar Adı Soyadı</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var yazarlar in Model)
+        {
+            <tr>
+                <td>@yazarlar.ID</td>
+                <td>@yazarlar.AdSoyad</td>
+                <td><a class="btn btn-primary" href="/Yazarlar/Guncelle/@yazarlar.ID">Güncelle</a></td>
+                <td><a class="btn btn-danger" href="/Yazarlar/Sil/@yazarlar.ID">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

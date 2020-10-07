@@ -1,0 +1,16 @@
+﻿@model arsiv.Models.EntityFramework.Yazarlar
+@{
+    ViewBag.Title = "Kaydet";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<h2>Yeni Yazar Kaydı</h2>
+@using (Html.BeginForm("Kaydet", "Yazarlar", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.AdSoyad)
+        @Html.TextBoxFor(m => m.AdSoyad, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    @Html.HiddenFor(m => m.ID)
+}

@@ -1,0 +1,30 @@
+﻿@using arsiv.Models.EntityFramework
+@model List<Turler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<h2>Tür İsmi</h2>
+<a class="btn btn-outline-primary" href="/Turler/Kaydet">Yeni Kategori</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Kategori No</th>
+            <th>Kategori İsmi</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var turler in Model)
+        {
+            <tr>
+                <td>@turler.ID</td>
+                <td>@turler.Turismi</td>
+                <td><a class="btn btn-primary" href="/Turler/Guncelle/@turler.ID">Güncelle</a></td>
+                <td><a class="btn btn-danger" href="/Turler/Sil/@turler.ID">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
